@@ -17,7 +17,6 @@
 package io.github.bbang208.cleanarchitecture.data
 
 import retrofit2.Response
-import timber.log.Timber
 import java.util.regex.Pattern
 
 /**
