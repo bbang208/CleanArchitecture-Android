@@ -7,6 +7,7 @@ import androidx.databinding.DataBindingUtil
 import dagger.hilt.android.AndroidEntryPoint
 import io.github.bbang208.cleanarchitecture.databinding.ActivityMainBinding
 import io.github.bbang208.cleanarchitecture.ui.common.TestAdapter
+import io.github.bbang208.cleanarchitecture.util.PushEvent
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -28,10 +29,24 @@ class MainActivity : AppCompatActivity() {
         viewBinding.recyclerView.adapter = adapter
 
 
-        viewModel.test.observe(this, { res ->
+        viewModel.test.observe(this) { res ->
             Timber.e("status: ${res.status}")
             Timber.e("data: ${res.data?.time}")
             Timber.e("errorMessage: ${res.message}")
+        }
+
+        PushEvent.getInstance().observe(this) {
+            Timber.e("event: $it")
+        }
+
+        val listener = { data1: Int, data2: String ->
+
+        }
+
+        PushEvent.getInstance().requestUpdate("asdad", listener)
+
+        PushEvent.getInstance().requestUpdate("test", listener = { data1: Int, data2: String ->
+
         })
     }
 }

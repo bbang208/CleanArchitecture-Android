@@ -18,6 +18,7 @@ package io.github.bbang208.cleanarchitecture.binding
 
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.widget.ViewPager2
 import com.skydoves.whatif.whatIfNotNullAs
 import io.github.bbang208.cleanarchitecture.ui.common.DataBoundListAdapter
 
@@ -31,4 +32,11 @@ object RecyclerViewBinding {
         }
     }
 
+    @JvmStatic
+    @BindingAdapter("submitListPager")
+    fun bindSubmitListPager(view: ViewPager2, itemList: List<Any>?) {
+        view.adapter.whatIfNotNullAs<DataBoundListAdapter<Any, *>> { adapter ->
+            adapter.submitList(itemList)
+        }
+    }
 }
