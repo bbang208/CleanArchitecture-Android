@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CleanArchitecture</string>
+    <string name="add_button">데이터 추가</string>
 </resources>
