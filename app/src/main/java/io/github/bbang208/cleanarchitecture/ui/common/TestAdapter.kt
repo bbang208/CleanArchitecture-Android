@@ -9,6 +9,7 @@ import io.github.bbang208.cleanarchitecture.MainViewModel
 import io.github.bbang208.cleanarchitecture.R
 import io.github.bbang208.cleanarchitecture.data.models.Repo
 import io.github.bbang208.cleanarchitecture.databinding.ItemRepoBinding
+import timber.log.Timber
 
 class TestAdapter(
     appExecutors: AppExecutors,
@@ -17,13 +18,13 @@ class TestAdapter(
     appExecutors = appExecutors,
     diffCallback = object : DiffUtil.ItemCallback<Repo>() {
         override fun areItemsTheSame(oldItem: Repo, newItem: Repo): Boolean {
-            return oldItem.owner == newItem.owner
-                    && oldItem.name == newItem.name
+            return oldItem.description == newItem.description
+                    && oldItem.description == newItem.description
         }
 
         override fun areContentsTheSame(oldItem: Repo, newItem: Repo): Boolean {
             return oldItem.description == newItem.description
-                    && oldItem.stars == newItem.stars
+                    && oldItem.description == newItem.description
         }
     }
 ) {

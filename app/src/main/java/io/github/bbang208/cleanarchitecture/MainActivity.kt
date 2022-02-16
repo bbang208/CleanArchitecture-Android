@@ -4,10 +4,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.lifecycleScope
 import dagger.hilt.android.AndroidEntryPoint
 import io.github.bbang208.cleanarchitecture.databinding.ActivityMainBinding
 import io.github.bbang208.cleanarchitecture.ui.common.TestAdapter
 import io.github.bbang208.cleanarchitecture.util.PushEvent
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import timber.log.Timber
 import javax.inject.Inject
 
