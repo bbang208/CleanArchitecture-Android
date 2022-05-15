@@ -38,8 +38,5 @@ object RecyclerViewBinding {
         view.adapter.whatIfNotNullAs<DataBoundListAdapter<Any, *>> { adapter ->
             adapter.submitList(itemList)
         }
-
-//        (dataBoundListAdapter as? DataBoundListAdapter<Any, *>)?.let { dataBoundListAdapter ->
-//        }
     }
 }
